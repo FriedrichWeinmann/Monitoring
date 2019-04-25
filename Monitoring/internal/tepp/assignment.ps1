@@ -1,0 +1,23 @@
+﻿Register-PSFTeppArgumentCompleter -Command Get-MonCheck -Parameter Tag -Name 'Monitoring.Tags'
+Register-PSFTeppArgumentCompleter -Command Get-MonTarget -Parameter Tag -Name 'Monitoring.Tags'
+Register-PSFTeppArgumentCompleter -Command Invoke-MonCheck -Parameter Tag -Name 'Monitoring.Tags'
+Register-PSFTeppArgumentCompleter -Command Register-MonCheck -Parameter Tag -Name 'Monitoring.Tags'
+Register-PSFTeppArgumentCompleter -Command Set-MonTarget -Parameter Tag -Name 'Monitoring.Tags'
+Register-PSFTeppArgumentCompleter -Command Test-MonHealth -Parameter Tag -Name 'Monitoring.Tags'
+
+Register-PSFTeppArgumentCompleter -Command Disconnect-MonTarget -Parameter TargetName -Name 'Monitoring.Target'
+Register-PSFTeppArgumentCompleter -Command Get-MonDatum -Parameter TargetName -Name 'Monitoring.Target'
+Register-PSFTeppArgumentCompleter -Command Get-MonLimit -Parameter TargetName -Name 'Monitoring.Target'
+Register-PSFTeppArgumentCompleter -Command Get-MonTarget -Parameter Name -Name 'Monitoring.Target'
+Register-PSFTeppArgumentCompleter -Command Invoke-MonCheck -Parameter TargetName -Name 'Monitoring.Target'
+Register-PSFTeppArgumentCompleter -Command Remove-MonTarget -Parameter Name -Name 'Monitoring.Target'
+Register-PSFTeppArgumentCompleter -Command Set-MonLimit -Parameter TargetName -Name 'Monitoring.Target'
+Register-PSFTeppArgumentCompleter -Command Set-MonTarget -Parameter Name -Name 'Monitoring.Target'
+Register-PSFTeppArgumentCompleter -Command Test-MonHealth -Parameter TargetName -Name 'Monitoring.Target'
+
+Register-PSFTeppArgumentCompleter -Command Get-MonDatum -Parameter CheckName -Name 'Monitoring.Check'
+Register-PSFTeppArgumentCompleter -Command Get-MonLimit -Parameter CheckName -Name 'Monitoring.Check'
+Register-PSFTeppArgumentCompleter -Command Set-MonLimit -Parameter CheckName -Name 'Monitoring.Check'
+Register-PSFTeppArgumentCompleter -Command Test-MonHealth -Parameter CheckName -Name 'Monitoring.Check'
+
+Register-PSFTeppArgumentCompleter -Command Set-MonTarget -Parameter Capability -Name 'Monitoring.Connection'

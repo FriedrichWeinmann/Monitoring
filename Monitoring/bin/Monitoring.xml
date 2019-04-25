@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Monitoring</name>
+    </assembly>
+    <members>
+        <member name="T:Monitoring.LimitOperator">
+            <summary>
+            The comparison types a limit operator can perform.
+            </summary>
+        </member>
+        <member name="F:Monitoring.LimitOperator.GreaterThan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Monitoring.LimitOperator.GreaterEqual">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Monitoring.LimitOperator.Equal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Monitoring.LimitOperator.NotEqual">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Monitoring.LimitOperator.LessEqual">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Monitoring.LimitOperator.LessThan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Monitoring.LimitOperator.Like">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Monitoring.LimitOperator.NotLike">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Monitoring.LimitOperator.Match">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Monitoring.LimitOperator.NotMatch">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>
