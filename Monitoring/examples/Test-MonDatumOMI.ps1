@@ -63,21 +63,21 @@
 		# Case: No Data
 		if ($result.Message -eq "No Data")
 		{
-			Write-Host "No Data Found"
+			Write-PSFMessage -Level Host -Message "No Data Found"
 		}
 		# Case: Something went wrong when gathering data
 		elseif ($result.Message)
 		{
-			Write-Host "Error happened: $($result.Message)"
+			Write-PSFMessage -Level Host -Message "Error happened: $($result.Message)"
 		}
 		# Case: Got Data
 		else
 		{
 			if ($result.Timestamp.Add((Get-PSFConfigValue -FullName 'Monitoring.Data.StaleTimeout')) -lt (Get-Date))
 			{
-				Write-Host "Got Data, but is stale: $($result.Result)"
+				Write-PSFMessage -Level Host -Message "Got Data, but is stale: $($result.Result)"
 			}
-			else { Write-Host "Got Data: $($result.Result)" }
+			else { Write-PSFMessage -Level Host -Message "Got Data: $($result.Result)" }
 		}
 	}
 }
