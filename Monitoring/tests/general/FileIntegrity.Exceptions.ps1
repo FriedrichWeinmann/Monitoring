@@ -24,11 +24,11 @@ $global:BannedCommands = @(
 	"Write-Host"  = @('Write-PSFHostColor.ps1','Write-PSFMessage.ps1')
 #>
 $global:MayContainCommand = @{
-	"Write-Host"  = @()
+	"Write-Host"  = @('Test-MonDatumOMI.ps1')
 	"Write-Verbose" = @()
-	"Write-Warning" = @()
-	"Write-Error"  = @()
-	"Write-Output" = @()
+	"Write-Warning" = @('Receive-Workload.ps1')
+	"Write-Error"  = @('Connect-MonTarget.ps1', 'Disconnect-MonTarget.ps1', 'Get-MonConnection.ps1', 'Remove-MonTarget.ps1', 'Receive-Workload.ps1')
+	"Write-Output" = @('Add-Workload.ps1')
 	"Write-Information" = @()
 	"Write-Debug" = @()
 }
