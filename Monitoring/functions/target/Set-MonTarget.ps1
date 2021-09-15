@@ -45,7 +45,8 @@
 		[string[]]
 		$Tag,
 		
-		[ValidateSet('WinRM', 'LDAP')]
+		[PsfValidateSet(TabCompletion = 'Monitoring.Connection')]
+		[PsfArgumentCompleter('Monitoring.Connection')]
 		[string[]]
 		$Capability
 	)
