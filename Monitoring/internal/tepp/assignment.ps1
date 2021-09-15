@@ -19,5 +19,3 @@ Register-PSFTeppArgumentCompleter -Command Get-MonDatum -Parameter CheckName -Na
 Register-PSFTeppArgumentCompleter -Command Get-MonLimit -Parameter CheckName -Name 'Monitoring.Check'
 Register-PSFTeppArgumentCompleter -Command Set-MonLimit -Parameter CheckName -Name 'Monitoring.Check'
 Register-PSFTeppArgumentCompleter -Command Test-MonHealth -Parameter CheckName -Name 'Monitoring.Check'
-
-Register-PSFTeppArgumentCompleter -Command Set-MonTarget -Parameter Capability -Name 'Monitoring.Connection'
