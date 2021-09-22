@@ -10,4 +10,9 @@
 	
 	# Import-Data
 	'Import-Data.SourceNotFound'		  = 'The data source "{0}" could not be found. Data import failed critically.'
+	
+	# Receive-Workload
+	'Receive-Workload.ConnectFailed'	  = 'Failed to connect to {0} : {1}'
+	'Receive-Workload.CheckFailed'	      = 'Failed to check {0} on {1} : {2}'
+	'Receive-Workload.RunspaceTimeout'    = 'Timeout: Gathering data from {0}'
 }

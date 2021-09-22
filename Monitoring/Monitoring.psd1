@@ -3,7 +3,7 @@
 	RootModule = 'Monitoring.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.0'
+	ModuleVersion = '1.0.1'
 	
 	# ID used to uniquely identify this module
 	GUID = '690f8e43-7a62-420c-b68c-659713e944e2'
@@ -21,12 +21,12 @@
 	Description = 'Module to implement a freely extensible monitoring data gathering framework'
 	
 	# Minimum version of the Windows PowerShell engine required by this module
-	PowerShellVersion = '5.0'
+	PowerShellVersion = '5.1'
 	
 	# Modules that must be imported into the global environment prior to importing
 	# this module
 	RequiredModules = @(
-		@{ ModuleName='PSFramework'; ModuleVersion='1.0.12' }
+		@{ ModuleName='PSFramework'; ModuleVersion= '1.6.205' }
 	)
 	
 	# Assemblies that must be loaded prior to importing this module
@@ -60,15 +60,6 @@
 		'Test-MonHealth'
 	)
 	
-	# Cmdlets to export from this module
-	CmdletsToExport = ''
-	
-	# Variables to export from this module
-	VariablesToExport = ''
-	
-	# Aliases to export from this module
-	AliasesToExport = ''
-	
 	# List of all modules packaged with this module
 	ModuleList = @()
 	
@@ -82,19 +73,19 @@
 		PSData = @{
 			
 			# Tags applied to this module. These help with module discovery in online galleries.
-			# Tags = @()
+			Tags = @('Monitoring')
 			
 			# A URL to the license for this module.
-			# LicenseUri = ''
+			LicenseUri = 'https://github.com/FriedrichWeinmann/Monitoring/blob/development/LICENSE'
 			
 			# A URL to the main website for this project.
-			# ProjectUri = ''
+			ProjectUri = 'https://github.com/FriedrichWeinmann/Monitoring'
 			
 			# A URL to an icon representing this module.
 			# IconUri = ''
 			
 			# ReleaseNotes of this module
-			# ReleaseNotes = ''
+			ReleaseNotes = 'https://github.com/FriedrichWeinmann/Monitoring/blob/development/Monitoring/changelog.md'
 			
 		} # End of PSData hashtable
 		

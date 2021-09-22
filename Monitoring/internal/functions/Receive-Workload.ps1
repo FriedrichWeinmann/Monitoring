@@ -39,7 +39,7 @@
 				if (-not $resultObject.Connected)
 				{
 					$runspaceContainer.Received = $true
-					Write-Error "Failed to connect to $($resultObject.Target.Name) : $($resultObject.Errors.Exception.Message)" -TargetObject $runspaceContainer
+					Write-PSFMessage -Level Warning -String 'Receive-Workload.ConnectFailed' -StringValues $resultObject.Target.Name, $resultObject.Errors.Exception.Message -Target $resultObject.Target.Name
 					continue
 				}
 				
@@ -52,7 +52,7 @@
 				{
 					if ($resultObject.ErrorChecks.Name -contains $key)
 					{
-						Write-Warning "Failed to check $key on $($resultObject.Target.Name) : $($resultObject.Results[$key].Message)"
+						Write-PSFMessage -Level Warning -String 'Receive-Workload.CheckFailed' -StringValues $key, $resultObject.Target.Name, $resultObject.Results[$key].Message -Target $resultObject.Target.Name
 						continue
 					}
 					$script:data[$resultObject.Target.Name][$key] = $resultObject.Results[$key]
@@ -67,7 +67,7 @@
 			#region Terminate worker agents that timed out
 			foreach ($runspaceContainer in ($script:runspaces | Where-Object { -not $_.Received -and ($_.StartTime.Add((Get-PSFConfigValue -FullName 'Monitoring.Runspace.ExecutionTimeout')) -lt (Get-Date)) }))
 			{
-				Write-Error "Timeout: Gathering data from $($runspaceContainer.Workload.Target.Name)" -TargetObject $runspaceContainer
+				Write-PSFMessage -Level Warning -String 'Receive-Workload.RunspaceTimeout' -StringValues $runspaceContainer.Workload.Target.Name -Target $runspaceContainer.Workload.Target.Name
 				$runspaceContainer.PowerShell.Dispose()
 				$runspaceContainer.Received = $true
 			}
