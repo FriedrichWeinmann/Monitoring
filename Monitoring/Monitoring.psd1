@@ -3,7 +3,7 @@
 	RootModule = 'Monitoring.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.1'
+	ModuleVersion = '1.0.5'
 	
 	# ID used to uniquely identify this module
 	GUID = '690f8e43-7a62-420c-b68c-659713e944e2'

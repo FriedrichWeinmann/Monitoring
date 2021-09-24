@@ -34,6 +34,6 @@
 	}
 	process
 	{
-		$ExecutionContext.InvokeCommand.InvokeScript($true, $sourceItem.ImportScript, $null, $TargetName)
+		$null = $ExecutionContext.InvokeCommand.InvokeScript($true, $sourceItem.ImportScript, $null, $TargetName)
 	}
 }

@@ -32,6 +32,6 @@
 	}
 	process
 	{
-		$ExecutionContext.InvokeCommand.InvokeScript($true, $sourceItem.ExportScript, $null, $TargetName)
+		$null = $ExecutionContext.InvokeCommand.InvokeScript($true, $sourceItem.ExportScript, $null, $TargetName)
 	}
 }
