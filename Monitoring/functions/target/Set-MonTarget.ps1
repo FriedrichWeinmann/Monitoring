@@ -26,6 +26,12 @@
 		For example, adding a WinRM capability would tell the system the target can accept PowerShell Remoting and CIM over WinRM connections.
 		Add supported capabilities by using the Register-MonConnection.
 		Assignments of capabilities are cummulative - applying new capabilities adds them to the object.
+
+	.PARAMETER RemoveTag
+		Remove a tag from the specified target.
+
+	.PARAMETER RemoveCapability
+		Remvoe a connection capability from the specified target.
 	
 	.EXAMPLE
 		PS C:\> Set-MonTarget -Name 'server1.contoso.com' -Tag 'server', 'dc', 'server2019' -Capability WinRM, ldap
@@ -41,14 +47,25 @@
 		[string[]]
 		$Name,
 		
-		[Parameter(Mandatory = $true, ValueFromPipelineByPropertyName = $true)]
+		[Parameter(ValueFromPipelineByPropertyName = $true)]
 		[string[]]
 		$Tag,
 		
+		[Parameter(ValueFromPipelineByPropertyName = $true)]
 		[PsfValidateSet(TabCompletion = 'Monitoring.Connection')]
 		[PsfArgumentCompleter('Monitoring.Connection')]
 		[string[]]
-		$Capability
+		$Capability,
+
+		[Parameter(ValueFromPipelineByPropertyName = $true)]
+		[string[]]
+		$RemoveTag,
+
+		[Parameter(ValueFromPipelineByPropertyName = $true)]
+		[PsfValidateSet(TabCompletion = 'Monitoring.Connection')]
+		[PsfArgumentCompleter('Monitoring.Connection')]
+		[string[]]
+		$RemoveCapability
 	)
 	
 	process
@@ -63,15 +80,23 @@
 				{
 					if ($target.Tag -notcontains $tagItem)
 					{
-						$target.Tag + $tagItem
+						$target.Tag = $target.Tag + $tagItem
 					}
 				}
 				foreach ($capabilityItem in $Capability)
 				{
 					if ($target.Capability -notcontains $capabilityItem)
 					{
-						$target.Capability + $capabilityItem
+						$target.Capability = $target.Capability + $capabilityItem
 					}
+				}
+				foreach ($tagItem in $RemoveTag)
+				{
+					$target.Tag = @(($target.Tag | Where-Object {$_ -ne $tagItem }))
+				}
+				foreach ($capabilityItem in $RemoveCapability)
+				{
+					$target.Capability = @(($target.Capability | Where-Object {$_ -ne $capabilityItem }))
 				}
 			}
 			#endregion Add to existing target
@@ -81,8 +106,8 @@
 			{
 				$script:configuration[$nameItem] = @{
 					Name	   = $nameItem
-					Tag	       = $Tag
-					Capability = $Capability
+					Tag	       = @($Tag)
+					Capability = @($Capability)
 				}
 			}
 			#endregion Create new target

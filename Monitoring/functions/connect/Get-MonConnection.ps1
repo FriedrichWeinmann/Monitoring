@@ -17,13 +17,22 @@
 #>
 	[CmdletBinding()]
 	param (
-		[Parameter(Mandatory = $true)]
 		[string[]]
 		$Capability
 	)
 	
 	process
 	{
+		if (-not $Capability) {
+			foreach ($key in $script:connectionTypes.Keys) {
+				[pscustomobject]@{
+					PSTypeName = 'Monitoring.Connection'
+					Name	   = $key
+					Connection = $script:connectionTypes[$key]
+				}
+			}
+			return
+		}
 		foreach ($capabilityItem in $Capability)
 		{
 			if (-not $script:connectionTypes[$capabilityItem])

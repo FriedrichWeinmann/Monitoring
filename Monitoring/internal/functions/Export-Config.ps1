@@ -44,6 +44,6 @@
 	process
 	{
 		$params = $Type, $TargetName
-		$ExecutionContext.InvokeCommand.InvokeScript($true, $sourceItem.ExportScript, $null, $params)
+		$null = $ExecutionContext.InvokeCommand.InvokeScript($true, $sourceItem.ExportScript, $null, $params)
 	}
 }
