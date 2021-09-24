@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+## 1.0.6 (2021-09-24)
+
++ Fix: Get-MonTarget - Now correctly returns untagged targets when no tag filter is specified
+
 ## 1.0.5 (2021-09-24)
 
 + Upd: Set-MonTarget - Added -RemoveTag and -RemoveCapability parameters
