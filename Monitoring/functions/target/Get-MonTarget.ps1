@@ -57,7 +57,7 @@
 					break
 				}
 			}
-			if (-not $foundTag) { continue }
+			if (-not $foundTag -and ($Tag -notcontains '*')) { continue }
 			#endregion Filter by Tag
 			
 			$clonedItem['PSTypeName'] = 'Monitoring.Target'
